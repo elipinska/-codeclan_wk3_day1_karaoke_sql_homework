@@ -48,11 +48,13 @@ INSERT INTO songs (title, artist)
 INSERT INTO songs (title, artist)
   VALUES ('Dancing Queen', 'Abba');
 INSERT INTO songs (title, artist)
-  VALUES ('The Show Must Do On', 'Queen');
+  VALUES ('The Show Must Go On', 'Queen');
 INSERT INTO songs (title, artist)
   VALUES ('Zombie', 'The Cranberries');
 INSERT INTO songs (title, artist)
   VALUES ('Sweet Child O Mine', 'Guns N Roses');
+  INSERT INTO songs (title, artist)
+    VALUES ('Bohemian Rhapsody', 'Queen');
 
 
 INSERT INTO guests (name, wallet, room_id, favourite_song_id)
@@ -89,3 +91,25 @@ SELECT * FROM rooms;
 SELECT * FROM songs;
 SELECT * FROM guests;
 SELECT * FROM rooms_and_songs;
+
+UPDATE guests
+  SET favourite_song_id = 6
+  WHERE name = 'Ewa';
+
+UPDATE guests
+  SET room_id = 2
+  WHERE name = 'Daniel';
+
+SELECT *
+  FROM guests, songs
+  WHERE guests.name = 'Ewa'
+  AND songs.id = 6;
+
+SELECT *
+  FROM songs
+  WHERE artist = 'Queen';
+
+SELECT name, wallet
+  FROM guests;
+
+SELECT COUNT(*) FROM songs;

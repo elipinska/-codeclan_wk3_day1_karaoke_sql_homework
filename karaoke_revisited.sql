@@ -113,3 +113,11 @@ SELECT name, wallet
   FROM guests;
 
 SELECT COUNT(*) FROM songs;
+
+-- Display song titles and names of rooms they're playing in
+SELECT songs.title, rooms.name
+FROM rooms, songs, rooms_and_songs
+WHERE songs.id = rooms_and_songs.song_id
+AND rooms.id = rooms_and_songs.room_id;
+-- AND songs.id = 1
+-- LIMIT 1;

@@ -119,5 +119,6 @@ SELECT songs.title, rooms.name
 FROM rooms, songs, rooms_and_songs
 WHERE songs.id = rooms_and_songs.song_id
 AND rooms.id = rooms_and_songs.room_id;
+-- The below will limit the result to the song with id = 1
 -- AND songs.id = 1
 -- LIMIT 1;
